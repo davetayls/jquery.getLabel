@@ -2,7 +2,7 @@
   "name": "getLabel",
   "title": "getLabel",
   "description": "simple plugin to get and cache a form elements label based on the for attribute",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/davetayls/jquery.getLabel",
   "author": {
     "name": "davetayls",

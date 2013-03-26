@@ -15,7 +15,10 @@ In your web page:
 <script src="dist/getLabel.min.js"></script>
 ...
 <label for="input">label</label>
-<input id="input" name="input">
+<div class="context">
+  <label for="input">context</label>
+  <input id="input" name="input">
+</div>
 ...
 <script>
 jQuery(function($) {
@@ -31,11 +34,21 @@ jQuery(function($) {
     .$labels // => all labels linked to first match
   ;
 
+  $('#input')
+    .getLabel({
+      context: '.context'
+    })
+    .text() // => "context"
+  ;
+
 });
 </script>
 ```
 
 ## Release History
+
+### 0.2.0
+- added ability to set `getLabel({ context: '.closestParent' })`
 
 ### 0.1.0
 - initial release

@@ -14,13 +14,25 @@
     }
   };
   GetLabel.prototype = {
-    defaults: {},
+    defaults: {
+      context: ''
+    },
     init: function(el, options){
       this.$el = $(el);
       this.settings = $.extend({}, this.defaults, options);
-      this.$labels = $('[for="'+ this.$el[0].id +'"]');
-
+      this.setLabels();
       return this;
+    },
+    setLabels: function(){
+      if (this.settings.context){
+        this.$labels = this.$el
+          .closest(this.settings.context)
+          .find('[for="'+ this.$el[0].id +'"]')
+        ;
+      } else {
+        this.$labels = $('[for="'+ this.$el[0].id +'"]');
+      }
+      return this.$labels;
     }
   };
 

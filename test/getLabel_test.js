@@ -32,5 +32,12 @@
     strictEqual(this.elems.getLabel().text(), 'label');
   });
 
+  test('gets a label within a context', function() {
+    expect(1);
+    strictEqual(this.elems.getLabel({
+      context: '.context'
+    }).text(), 'context');
+  });
+
 
 }(jQuery));
