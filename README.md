@@ -13,20 +13,23 @@ In your web page:
 ```html
 <script src="jquery.js"></script>
 <script src="dist/getLabel.min.js"></script>
+...
+<label for="input">label</label>
+<input id="input" name="input">
+...
 <script>
 jQuery(function($) {
   // returns a jQuery object containing the first
   // label found for the first matched element
-  $('#myinput').getLabel();
+  $('#input')
+    .getLabel()
+    .text() // => "label"
+  ;
 });
 </script>
 ```
 
-## Documentation
-_(Coming soon)_
-
-## Examples
-_(Coming soon)_
-
 ## Release History
-_(Nothing yet)_
+
+### 0.1.0
+- initial release
