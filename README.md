@@ -25,6 +25,12 @@ jQuery(function($) {
     .getLabel()
     .text() // => "label"
   ;
+
+  $('#input')
+    .data('getLabel')
+    .$labels // => all labels linked to first match
+  ;
+
 });
 </script>
 ```
